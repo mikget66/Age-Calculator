@@ -1,8 +1,10 @@
-let userInput = document.getElementById('date');
-const calcBtn = document.querySelector('.calc');
-userInput.max = new Date().toISOString().split('T')[0];
-let result = document.getElementById('result')
+'use strict';
 
+const userInput = document.getElementById('date');
+const calcBtn = document.querySelector('.calc');
+const result = document.getElementById('result');
+
+userInput.max = new Date().toISOString().split('T')[0];
 //so user cannot select future date
 
 function calculateAge() {
@@ -25,6 +27,5 @@ function calculateAge() {
 
   result.innerHTML = `You are <span>${years}</span> years, <span>${months}</span> months, and <span>${days}</span> days old.`;
 }
-
 
 calcBtn.addEventListener('click', calculateAge);
